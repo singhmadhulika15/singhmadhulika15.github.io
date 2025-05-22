@@ -1,0 +1,799 @@
+/* about.css */
+
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Roboto, sans-serif;
+    background-color: #ffffff; /* Changed to white to match gallery page */
+}
+
+
+/* Map Container Styling */
+#map-container {
+    width: 80%;
+    max-width: 1200px;
+    height: 600px;
+    margin: 50px auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Leaflet Map Styling */
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom Marker Container */
+.custom-marker .marker {
+    position: relative;
+    width: 250px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: default;
+}
+
+/* Pin Icon Styling */
+.custom-marker .marker .pin {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 60px;
+    z-index: 1;
+    object-fit: contain;
+}
+
+/* Card Box Styling */
+.custom-marker .marker .card {
+    position: relative;
+    bottom: 2px;
+    width: 240px;
+    padding: 5px 12px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* University Name Styling */
+.custom-marker .marker .card .university-name {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: #1B7476;
+}
+
+/* Degree and Year Styling */
+.custom-marker .marker .card .degree-year {
+    font-size: 11px;
+    color: #666;
+}
+
+/* Add Arrow-like Pointer Below the Card */
+.custom-marker .marker .card::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #ffffff;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Modal Overlay */
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+#modal-overlay.hidden {
+    display: none;
+}
+
+/* Modal Card Styling */
+#modal-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 600px;
+    max-width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    overflow-y: auto;
+    max-height: 80%;
+}
+
+/* Modal Close Button */
+#close-modal {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    float: right;
+    cursor: pointer;
+}
+
+/* Modal Title */
+#modal-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #1B7476;
+}
+
+/* Modal Content */
+#modal-content {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #map-container {
+        width: 95%;
+        height: 400px;
+        margin: 30px auto;
+    }
+
+    .custom-marker .marker {
+        width: 220px;
+        height: 50px;
+    }
+
+    .custom-marker .marker .pin {
+        width: 15px;
+        height: 15px;
+        top: 45px;
+    }
+
+    .custom-marker .marker .card {
+        width: 130px;
+        height: 30px;
+        padding: 4px 8px;
+        font-size: 2px !important;
+        bottom: 2px;
+        text-align: right;
+    }
+
+    .custom-marker .marker .card::after {
+        border-top: none;
+        border-bottom: 10px solid #ffffff;
+        top: 100%;
+        bottom: unset;
+    }
+
+    #modal-card {
+        width: 90%;
+        max-height: 70%;
+    }
+    .custom-marker .marker .card .university-name {
+        font-size: 9px !important;
+    }
+
+    .custom-marker .marker .card .degree-year {
+        font-size: 7px !important;
+    }
+
+    .custom-marker .marker .card {
+        line-height: 1 !important;
+    }
+}
+
+/* Navigation Styles */
+.nav {
+    position: static;
+    width: 100%;
+    background: transparent;
+    padding: 20px 0;
+    transition: background 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    font-family: 'Public Sans', sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    background-color: #1B7476;
+}
+
+.nav-item.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* Hero Section Styles */
+.about-hero {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    position: relative;
+}
+
+
+/* Keyframes for upward fade-in animation */
+@keyframes slideUpFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(15px); /* Reduced translation to avoid scrollbar */
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Final position */
+    }
+}
+/* Apply animation to BLOG title */
+.about-hero h1 {
+    font-size: 2rem;
+    color: white;
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 100;
+    margin-top: -15px;
+    opacity: 0; /* Ensure it's invisible before animation starts */
+    animation: slideUpFadeIn 1.5s ease-out forwards; /* Trigger animation */
+}
+
+.hero-section-cutter-image {
+    position: absolute;
+    bottom: 0; /* Ensure it always stays at the bottom */
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+
+/* Footer Section Styles */
+footer {
+    background: black;
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Responsive Styles for Navigation, Hero, and Footer */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        padding: 13px;
+        position: fixed;
+        top: 10px;
+        right: 5.5px;
+        z-index: 1001;
+        background-color: #1B7476;
+        border-radius: 8px;
+        transform: scale(0.8);
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    .nav-menu.show {
+        display: block;
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+
+    .about-hero h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    footer {
+        padding: 2rem 1rem;
+    }
+}
+
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    
+}
+
+
+/* Header Styles */
+.header {
+    height: 50vh; /* Occupies full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Positions nav at top and copyright at bottom */
+    background: black; /* Unified gradient */
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    position: relative;
+}
+
+/* Navigation Styles */
+
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px; /* Added this line to move the nav items to the right */
+
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    font-family: 'Public Sans', sans-serif; /* Updated to match gradient */
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1B7478;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: calc(100% + 8px); 
+    left: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Pseudo-element to cover the gap */
+.nav-dropdown:hover::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 10px; /* Match the space added above */
+}
+
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    font-family: 'Public Sans', sans-serif; /* Updated to match nav-item */
+    color: #f1f1f1;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.dropdown-content a:hover {
+    background-color: #125fdc;
+}
+
+.arrow-container {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.arrow {
+    width: 7px;
+    height: 7px;
+    border: solid white;
+    border-width: 2px 2px 0 0;
+    display: inline-block;
+    transform: rotate(135deg);
+    transition: transform 0.3s ease;
+    position: relative;
+    top: -2px;
+    transform-origin: 69% 50%;
+}
+
+.nav-dropdown:hover .arrow {
+    transform: rotate(-45deg) translateY(1.8px);
+}
+
+
+.hero-section-cutter-image {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+
+/* Copyright Styles */
+.header .copyright {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.header .copyright p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Footer Styles */
+footer {
+    background: black; /* Same gradient as header */
+    background-size: 400% 400%; /* Ensure the animation matches */
+    animation: gradient 30s ease infinite; /* Same animation as header */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+    padding: 13px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background-color: #1B7476;
+    border-radius: 8px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Responsive Styles */
+
+/* Tablet and below */
+@media (max-width: 1024px) {
+    .gallery-content .gallery-container {
+        padding: 3rem 0;
+    }
+
+    .gallery-hero {
+        height: 60vh;
+    }
+
+    .gallery-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .gallery-hero p {
+        font-size: 1rem;
+    }
+
+    .gallery-content {
+        padding: 3rem 0;
+    }
+
+    .gallery-content h2 {
+        font-size: 1.75rem;
+    }
+
+    .gallery-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        padding: 13px;
+        position: fixed;
+        top: 10px;
+        right: 5.5px;
+        z-index: 1001;
+        background-color: #1B7476;
+        border-radius: 8px;
+        transform: scale(0.8);
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav {
+        background: none; /* Remove the gradient background */
+        padding: 0; /* Remove any padding */
+        height: auto; /* Allow the height to adjust automatically */
+    }
+
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 50px;
+        right: 11px;
+        width: 200px;
+        background-color: #1B7476;
+        padding: 10px 0;
+        border-radius: 8px 0 8px 8px;
+        overflow: hidden;
+        z-index: 1000;
+    }
+
+    .nav-menu.show {
+        display: block;
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+
+    .nav-item {
+        display: block;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        font-size: 16px;
+    }
+
+    .nav-dropdown {
+        position: relative;
+    }
+
+    .nav-dropdown > .nav-item .arrow-container {
+        display: inline-flex; /* Show the arrow for Research menu */
+    }
+
+    .dropdown-content {
+        display: none;
+        background-color: transparent; /* Remove background */
+        box-shadow: none;
+        padding-left: 5px; /* Indent submenu items */
+        position: static; /* Ensure it's not absolutely positioned */
+    }
+
+    .nav-dropdown.active .dropdown-content {
+        display: block; /* Show submenu when active */
+    }
+
+    /* Remove background color and box shadow for active items */
+    .nav-item.active,
+    .nav-item:hover {
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+
+    /* Remove any padding changes for active items */
+    .nav-item.active {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    /* Ensure dropdown content is displayed normally */
+    .nav-dropdown.active .dropdown-content {
+        display: block;
+        background-color: transparent;
+    }
+
+    /* Remove hover effects for dropdown items */
+    .dropdown-content a:hover {
+        background-color: transparent;
+    }
+
+}
+
+
+
+
+
+/* Media Query for Large Screens (1600px and above) */
+@media (min-width: 1600px) {
+    
+
+    /* Navigation Content Adjustments */
+    .nav-content {
+        margin-right: 80px;     /* Aligns navigation items with ample spacing */
+    }
+
+    /* Navigation Menu Adjustments */
+    .nav-menu {
+        gap: 20px;              /* Adds space between navigation items */
+    }
+
+    /* Navigation Items Adjustments */
+    .nav-item {
+        padding: 15px 20px;     /* Increases clickable area for nav items */
+        font-size: 18px;        /* Enhances readability */
+    }
+
+    /* Dropdown Content Adjustments */
+    .dropdown-content a {
+        padding: 14px 20px;     /* Provides comfortable spacing in dropdowns */
+        font-size: 18px;        /* Consistent font size with nav items */
+    }
+
+}
+
+/* Footer Styles */
+footer {
+    background: black;
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    color: white;
+    padding: 30px 10%; /* Increased padding for a better layout */
+    display: flex;
+    flex-direction: column; /* Column layout for small screens */
+    text-align: center; /* Center text for default view */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+}
+
+footer p {
+    font-size: 14px; /* Increased font size for readability */
+    margin: 0;
+    opacity: 0.8; /* Slightly faded text color */
+}
+
+/* Flex container for footer links, hidden on smaller screens */
+footer .footer-links {
+    display: flex;
+    gap: 15px; /* Space between footer links */
+    margin-top: 15px;
+}
+
+footer .footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+footer .footer-links a:hover {
+    color: #f0f0f0; /* Slight color change on hover */
+}
+/* Responsive Styles for Larger Screens */
+@media (min-width: 1024px) {
+    footer {
+        flex-direction: row; /* Row layout for larger screens */
+        justify-content: center; /* Center content horizontally */
+        padding: 30px 0; /* Remove side padding to center footer */
+        text-align: center; /* Center text */
+    }
+
+    footer p {
+        margin: 0 20px; /* Add margin to create space between items */
+    }
+}
+/* Ensure consistent animation settings on all screen sizes */
+@media (max-width: 768px) {
+    .gradient-background, 
+    .project-hero {
+        background-size: 400% 400%; /* Same as desktop */
+        animation: gradient 20s ease infinite; /* Ensure animation is applied */
+    }
+
+    /* Re-apply keyframes to prevent "sticking" */
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+}

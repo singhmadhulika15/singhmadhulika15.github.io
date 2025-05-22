@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="about.css">
+    <!-- Leaflet Map Styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="icon" href="/images/profile.png" type="image/png">
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body class="about-page">
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="nav-content">
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-item">Home</a>
+                    <a href="about.html" class="nav-item active">About</a>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-item">
+                            <span>Research</span>
+                            <span class="arrow-container">
+                                <i class="arrow"></i>
+                            </span>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="projects.html" class="nav-item">Highlights</a>
+                            <a href="resources.html" class="nav-item">Resources</a>
+                        </div>
+                    </div>
+                    <a href="publications.html" class="nav-item">Publications</a>
+                    <a href="blog.html" class="nav-item">Blog</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="about-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>EDUCATION</h1>
+                    </div>
+                </div>
+            </div>
+            <img src="images/boundary.svg" alt="" class="hero-section-cutter-image">
+        </div>
+    </header>
+
+    <!-- Map Section -->
+    <div id="map-container">
+        <div id="map"></div>
+    </div>
+
+    <!-- Modal for Info -->
+    <div id="modal-overlay" class="hidden">
+        <div id="modal-card">
+            <button id="close-modal">✖</button>
+            <h2 id="modal-title">Title Placeholder</h2>
+            <p id="modal-content">Content placeholder for modal details.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Your Name, a fork of 
+            <a href="https://github.com/muhammedrashidx/ScholarSite_2.0" target="_blank" style="text-decoration: none; color: #b8aaaa; text-decoration: underline;">
+                ScholarSite_2.0
+            </a>
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="about.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
