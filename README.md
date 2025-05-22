@@ -2,15 +2,15 @@
 
 A fully responsive, modern website template designed for academic researchers to showcase their research, publications, and accomplishments. This template is perfect for creating a personal academic website to share your work with the world.
 
-![GitHub Stars](https://img.shields.io/github/stars/muhammedrashidx/ScholarSite?style=social)
-![GitHub Forks](https://img.shields.io/github/forks/muhammedrashidx/ScholarSite?style=social)
+![GitHub Stars](https://img.shields.io/github/stars/muhammedrashidx/ScholarSite_2.0?style=social)
+![GitHub Forks](https://img.shields.io/github/forks/muhammedrashidx/ScholarSite_2.0?style=social)
 
 ## ✨ Features
 
 - **Responsive Design**: Adapts to different screen sizes (mobile, tablet, desktop)
 - **Easy to Customize**: Well-commented CSS and HTML for easy edits
 - **Modern Look**: Clean and minimal design perfect for academic profiles
-- **Complete Pages**: About page (index.html), Research page (research.html), Publications page (publications.html), Gallery page (gallery.html)
+- **Complete Pages**: About page (index.html), Research Project page (projects.html), Publications page (publications.html), About page (about.html), Blog page (blog.html)
 - **Fast Loading**: Optimized for speed and performance
 - **SEO Friendly**: Structured for search engine optimization
 
@@ -59,11 +59,11 @@ git config --global user.email "your.email@example.com"
 
 ### Step 4: Fork the ScholarSite Repository
 
-1. Go to the [ScholarSite repository](https://github.com/muhammedrashidx/ScholarSite)
+1. Go to the [ScholarSite repository](https://github.com/muhammedrashidx/ScholarSite_2.0)
 2. Click the **Fork** button in the top-right corner
 3. This creates your own copy of the repository
 
-[![Fork the Repository](https://img.shields.io/badge/Fork%20The%20Repository-blue?style=for-the-badge)](https://github.com/muhammedrashidx/ScholarSite/fork)
+[![Fork the Repository](https://img.shields.io/badge/Fork%20The%20Repository-blue?style=for-the-badge)](https://github.com/muhammedrashidx/ScholarSite_2.0/fork)
 
 ### Step 5: Clone Your Repository
 
@@ -106,7 +106,7 @@ Now comes the fun part - making it yours!
    - Your contact information
    - Links to your social media/professional profiles
 
-#### 6.2 Add Your Research (research.html)
+#### 6.2 Add Your Research Projects (projects.html)
 1. Open `research.html`
 2. Add your research projects with:
    - Project titles
@@ -122,7 +122,7 @@ Now comes the fun part - making it yours!
    - Publication dates
    - Links to full text or abstracts
 
-#### 6.4 Create Your Gallery (gallery.html)
+#### 6.4 Add About (about.html)
 1. Open `gallery.html`
 2. Add images of:
    - Your research work
@@ -130,8 +130,8 @@ Now comes the fun part - making it yours!
    - Lab photos
    - Academic events
 
-#### 6.5 Customize Styling (style.css)
-1. Open `style.css`
+#### 6.5 Customize Styling (style.css)(projects.css)(publications.css)(blog.css)
+1. Open `style.css` / `projects.css` / `publications.css` / `blog.css` /
 2. The CSS is well-commented - you can easily change:
    - Colors
    - Fonts
@@ -267,8 +267,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If ScholarSite helped you create your academic website, please:
 
-[![Star the Repository](https://img.shields.io/badge/Star%20The%20Repository-yellow?style=for-the-badge)](https://github.com/muhammedrashidx/ScholarSite/stargazers)
-[![Fork the Repository](https://img.shields.io/badge/Fork%20The%20Repository-blue?style=for-the-badge)](https://github.com/muhammedrashidx/ScholarSite/fork)
+[![Star the Repository](https://img.shields.io/badge/Star%20The%20Repository-yellow?style=for-the-badge)](https://github.com/muhammedrashidx/ScholarSite_2.0/stargazers)
+[![Fork the Repository](https://img.shields.io/badge/Fork%20The%20Repository-blue?style=for-the-badge)](https://github.com/muhammedrashidx/ScholarSite_2.0/fork)
 
 ---
 
